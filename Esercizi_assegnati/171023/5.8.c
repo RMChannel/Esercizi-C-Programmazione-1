@@ -4,6 +4,10 @@ int main(void) {
     int h,m;
     printf("Inserisci l'orario: ");
     scanf("%d:%d",&h,&m);
+    if ((h>24) || (h<0) || (m>59) || (m<0)) {
+        printf("L'orario non è corretto, riprovare\n");
+        return 0;
+    }
     h=(h*60)+m;
     if (h>=1305) printf("Non ci sono aerei disponibili\n");
     else {

@@ -5,6 +5,10 @@ int main(void) {
         int n, scelta;
         printf("Inserisci un numero: ");
         scanf("%d",&n);
+        if (n<0) {
+            printf("Numero non corretto, riprovare\n");
+            continue;
+        }
         printf("%d Carte da 20\n",(n/20));
         n=n%20;
         printf("%d Carte da 10\n", (n/10));

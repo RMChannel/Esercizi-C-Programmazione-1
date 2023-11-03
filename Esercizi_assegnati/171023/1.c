@@ -4,10 +4,14 @@ int main(void) {
     int m,d,y;
     printf("Inserisci una data mm/dd/yy; ");
     scanf("%d/%d/%d",&m,&d,&y);
+    if ((d<1) || (d>31) || (m<1) || (m>12) || (y<0)) {
+        printf("La data inserita non è corretta\n");
+        return 0;
+    }
     printf("Dated this %d",d);
-    if (((d&10)==2) && (d!=11)) printf("st");
-    else if (((d&10)==2) && (d!=12)) printf("nd");
-    else if (((d&10)==3) && (d!=13)) printf("rd");
+    if (((d%10)==1) && (d!=11)) printf("st");
+    else if (((d%10)==2) && (d!=12)) printf("nd");
+    else if (((d%10)==3) && (d!=13)) printf("rd");
     else printf("th");
     printf(" day of ");
     switch(m) {
@@ -48,5 +52,7 @@ int main(void) {
             printf("December");
             break;
     }
-    printf(", 20%d\n",y);
+    if (y>100) printf(", %d\n",y);
+    else if (y<=23) printf(", 20%d\n",y);
+    else printf(", 19%d\n",y);
 }

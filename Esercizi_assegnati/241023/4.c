@@ -5,7 +5,8 @@ int main(void) {
     while (n!=-1) {
         printf("Inserisci un numero: ");
         scanf("%d",&n);
-        if ((n%2)==0) p++;
+        if (n<0) printf("Numero non corretto\n");
+        else if ((n%2)==0) p++;
         else if (n!=-1) d++;
     }
     printf("Numeri pari: %d\nNumeri dispari: %d\n",p,d);
