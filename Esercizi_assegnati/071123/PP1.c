@@ -6,9 +6,9 @@ int main(void) {
         printf("Inserisci una parola: ");
         scanf("%c",&c);
         while(c!='\n') {
-            if (c==97) c=122;
-            else if (c==65) c=90;
-            else if ((c>65 && c<91) || (c>97 && c<123)) c--;
+            if (c=='a') c='z';
+            else if (c=='A') c='Z';
+            else if ((c>'a' && c<='z') || (c>'A' && c<='Z')) c--;
             printf("%c",c);
             scanf("%c",&c);
         }
