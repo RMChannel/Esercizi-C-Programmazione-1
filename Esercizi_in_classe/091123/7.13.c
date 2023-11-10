@@ -15,10 +15,8 @@ int main(void) {
                 temp=0;
             }
         }
-        media+=temp;
-        i++;
-        media=(float)(media/i);
-        printf("La media delle lettere per parola è: %f\nVuoi terminare il programma?\n[S]Sì\n[Altro]No\n",media);
+        media=(float)((media+temp)/(i+1));
+        printf("La media delle lettere per parola e': %f\nVuoi terminare il programma?\n[S]Si'\n[Altro]No\n",media);
         c=getchar();
         if ((c=='S') || (c=='s')) break;
         while (c!='\n') c=getchar();
