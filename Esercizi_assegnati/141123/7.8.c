@@ -10,7 +10,6 @@ int main(void) {
         while (a!='\n') a=getchar();
         return 0;
     }
-    a=getchar();
     while (a!='\n') {
         if ((a=='a') || (a=='A')) aop=0;
         else if ((a=='p') || (a=='P')) aop=1;
@@ -26,7 +25,7 @@ int main(void) {
     h=(h*60)+m;
     if (h>=1305) printf("Non ci sono aerei disponibili\n");
     else {
-        printf("IL primo aereo disponibile è quello delle ");
+        printf("IL primo aereo disponibile e' quello delle ");
         if ((h-480)<(583-h)) printf("8:00am ed arriva alle 10:16am\n");
         else if ((h-583)<(679-h)) printf("9:43am ed arriva alle 11:52am\n");
         else if ((h-679)<(767-h)) printf("11:19am ed arriva alle 01:31pm\n");
