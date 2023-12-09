@@ -11,7 +11,7 @@ int main(void) {
         frase[i]=ch;
         i++;
     } while (ch!='?' && ch!='!' && ch!='.');
-    i-=2;
+    i-=1;
     for (;i>=0;i--) {
         int i2=i;
         while (frase[i]!=' ' && i>=0) i--;
