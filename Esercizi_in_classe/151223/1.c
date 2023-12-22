@@ -9,9 +9,28 @@
 void pulisci(char *s) {
     int i;
     for (i=0;s[i]!='\0';i++);
-    for (;s[i]<'a' || s[i]>'z';i--);
+    for (;(s[i]<'a' || s[i]>'z');i--);
     i++;
     s[i]='\0';
+}
+
+int f_subtr(char *s, char *t) {
+    for (int i=0;i<strlen(s);i++) {
+        int i2, i4=i;
+        for (i2=0;i2<strlen(t);i2++) {
+            if (s[i4]==t[i2]) i4++;
+            else break;
+        }
+        if (t[i2]=='\0') {
+            i=i4;
+            while ((s[i]>='a' && s[i]<='z') || (s[i]>='A' && s[i]<='Z')) i--;
+            i++;
+            int i3=0;
+            if (t[i3]==s[i]) return 1;
+            else return 0;
+        }
+    }
+    return 0;
 }
 
 int main (int argc, char *argv[]) {
@@ -35,21 +54,36 @@ int main (int argc, char *argv[]) {
     
 /* svolgimento esercizio */
     
-    char line[LLEN+1], nome[WLEN+1], regioni[2*WLEN+1];
-    int area, alt, prof, n;
+    char line[LLEN+1], nome[WLEN+1], regioni[2*WLEN+1], lago_max[LLEN+1];
+    int area, alt, prof, n, maxarea=0;
     
     while ( fgets(line, sizeof(line), fp) ) { 
     
         n=sscanf(line, "%[^0123456789] %d %d %d %[^\n]", nome, &area, &prof, &alt, regioni);
-        pulisci(nome);
         if (argc==2) {
-            if (strcmp(argv[1], nome)==0) {
-                printf("%s %s\n", nome, regioni);
+            pulisci(nome);
+            if (strcmp(argv[1], nome)==0) printf("%s %s\n", nome, regioni);
+            if (f_subtr(regioni,argv[1])) printf("%s\n", nome);
+        }
+        else if (argv[2][0]=='+')
+            {
+                if (alt>atoi(argv[1])) {
+                    if (area>maxarea) {
+                        maxarea=area;
+                        strcpy(lago_max,nome);
+                    }
             }
         }
-        
+        else if (argv[2][0]=='-') {
+            if (alt<atoi(argv[1])) {
+                if (area>maxarea) {
+                    maxarea=area;
+                    strcpy(lago_max,nome);
+                }
+            }
+        }
     } //fine while
-    
+    if (argc==3) printf("%d %s\n",maxarea,lago_max);
     fclose(fp);
     return 0;
 }
