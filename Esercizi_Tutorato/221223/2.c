@@ -78,4 +78,5 @@ int main(int argc, char *argv[]) {
         }
         if (flag) printf("%d\n",victory);
     }
+    fclose(fp);
 }
