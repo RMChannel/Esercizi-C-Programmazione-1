@@ -1,0 +1,31 @@
+-26.73 	 Sole 	0.000016 	
+-1.47 	 Sirio 	8.6 	
+-0.62 	 Canopo 	310 	
+-0.27 	 Alfa Centauri 	4.4 	
+-0.04  	 Arturo 	37 	
+0.03 	 Vega 	25 	
+0.08 	 Capella 	42 	
+0.12 	 Rigel 	770 	
+0.34 	 Procione 	11 	
+0.50 	 Achernar 	140 	
+0.58  	 Betelgeuse 	640 	
+0.60  	 Hadar (Agena) 	530 	
+0.77 	 Altair 	17 	
+0.81 	 Acrux 	320 	
+0.98  	 Aldebaran  65 	
+1.04  	 Spica 	260 	
+1.09  	 Antares  600 	
+1.15  	 Polluce 34 	
+1.16  	 Fomalhaut 25 	
+1.25  	 Deneb 	1400 	
+1.30  	 Mimosa 350 	
+1.35  	 Regolo 	77 	
+1.51  	 Adhara 	430 	
+1.58  	 Castore   52 	
+1.62  	 Shaula 	700 	
+1.63  	 Gacrux 	88 	
+1.64  	 Bellatrix 	240 	
+1.68  	 Elnath 	130 	
+1.70 	 Miaplacidus 	110 	
+1.69 	 Alnilam 	1300 	
+1.70  	 Alnitak 	820 	
