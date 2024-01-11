@@ -5,9 +5,10 @@ void substitute(char *s1, char *s2, int m) {
     s1+=m-1;
     char *s11=s1;
     char *s22=s2;
-    for (;(*s22 && *s11);s11++,s22++);
-    s11--;
-    if (!(*s11)) return;
+    char *s1f=s1;
+    for (;*s1f;s1f++);
+    for (;(*s22 || *s11);s11++,s22++);
+    if ((s11>s1f)) return;
     for (;*s2;s1++,s2++) *s1=*s2;
 }
 

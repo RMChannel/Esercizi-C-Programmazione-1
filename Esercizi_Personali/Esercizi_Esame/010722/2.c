@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
     while (fgets(line,sizeof(line),fp)) {
         int h1,m1,h2,m2,cambi;
         sscanf(line,"%d:%d - %d:%d %d",&h1,&m1,&h2,&m2,&cambi);
-        if (function==1) printf("%.2d:%.2d %.2d:%.2d %d\n",h1,m1,h2,m2,cambi);
+        if (function==1 && cambi!=0) printf("%.2d:%.2d %.2d:%.2d %d\n",h1,m1,h2,m2,cambi);
         else if (function==2) {
             int starttime2=calcolatempo("",h1,m1);
             int endtime2=calcolatempo("",h2,m2);
@@ -51,9 +51,12 @@ int main(int argc, char *argv[]) {
         }
     }
     if (function==2) {
-        int h=0;
-        for (;difference>=60;difference-=60,h++);
-        printf("%.2d:%.2d %.2d:%.2d %d (%.2d:%.2d)\n",hd1,md1,hd2,md2,cambid,h,difference);
+        if (difference==9999) printf("Nessun orario trovato\n");
+        else {
+            int h=0;
+            for (;difference>=60;difference-=60,h++);
+            printf("%.2d:%.2d %.2d:%.2d %d (%.2d:%.2d)\n",hd1,md1,hd2,md2,cambid,h,difference);
+        }
     }
     fclose(fp);
     return 0;

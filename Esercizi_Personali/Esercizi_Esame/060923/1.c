@@ -1,8 +1,15 @@
 #include <stdio.h>
 
+int mystrlen(char *s) {
+    int n=0;
+    for (;*s;s++,n++);
+    return n;
+}
+
 int strsubend(char *s, char *t, char *r) {
     char *s1=s;
     char *t1=t;
+    if (mystrlen(t)!=mystrlen(r)) return 0;
     for (;(*s && *t);s++) {
         if (*s==*t) t++;
         else if (t!=t1) t=t1;
